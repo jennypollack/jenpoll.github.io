@@ -15,17 +15,6 @@
 		margin-bottom: 25px;
 		margin-left: 50px;
 	}
-	.textbox {
-	    border: 1px solid #848484;
-	    /*-webkit-border-radius: 30px;
-	    -moz-border-radius: 30px; */
-	    border-radius: 30px;
-	    outline:0;
-	    height:25px;
-	    width: 275px;
-	    padding-left:10px;
-	    padding-right:10px;
-	  }
 
 </style>
 
@@ -49,6 +38,8 @@
   ga('send', 'pageview');
 
 </script>
+
+
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -136,15 +127,55 @@
 		  <h4>Here is where the calculadder will be developed</h4> I wanted to make an iPhone app to track the expendatures I was making while I was traveling in Israel (I arrived the day that the ground invasion began, but that's a whole other story) and had converted USD to shekels. I didn't want to have to find another money exchange operation so I was keeping track of the money I spent by making a note of every purchase and adding them up every so often. This seemed like the perfect project to start learing. I'm also going to practice making it as a web application because I'm currently attempting to transition into a more development heavy role at Ornicept, where I currently do manual testing of our web and tablet software.
 	  </div>
 
-	  <div class="calculadder-container">
-		<input class="textbox"type="text">
-		<br><br>
-		<input class="textbox"type="text">
-		<br><br>
-		<input class="textbox"type="text">
+	<div class ="calculadder-container">
+	  <script>
 
-	  </div>
+	  var input;
+	function calculate() {
 
+		input = document.getElementById('userInput').value;
+
+		console.log(input);
+
+	}
+		var maxID = 0;
+		function getTemplateRow() {
+			var x = document.getElementById("templateRow").cloneNode(true);
+			x.id = "";
+			x.style.display = "";
+			x.innerHTML = x.innerHTML.replace(/{id}/, ++maxID);
+			return x;
+		}
+		function addRow() {
+			var t = document.getElementById("theTable");
+			var rows = t.getElementsByTagName("tr");
+			var r = rows[rows.length - 1];
+			r.parentNode.insertBefore(getTemplateRow(), r);
+
+			calculate();
+		}
+
+
+
+
+
+	  </script>
+
+
+	  <table id="theTable">
+		<tr>
+		<td>Calculadder</td>
+
+		</tr>
+		<tr id="templateRow" style="display:none">
+		<td>{id}</td>
+		<td><input ID="userInput" /></td>
+		</tr>
+	  </table>
+
+	  <button onclick="addRow();">Add</button>
+
+	</div>
   </body>
 
 <div id="footer">
