@@ -1,17 +1,50 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-	<body>
-		<script src="js/jenpoll.js"></script>
+  <head>
+
+	  <script src="http://jashkenas.github.io/underscore/underscore-min.js"></script>
+	  <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+	  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.min.js"></script>
+	  <script src="js/jenpoll.js"></script>
+
+      <link rel="stylesheet" href="css/jenpoll.css">
 
 
-		<h1>My First Heading</h1>
+	 <meta charset="utf-8">
 
-			<p>My first paragraph.</p>
+    <title>jenpoll</title>
 
-			<div class = "calculadder">
+  </head>
+
+  <h1>The calculadder</h1>
+  <p>Welcome</p>
+
+  <p class="view"><a href="https://github.com/jenpoll">View My GitHub Profile</a></p>
+  <body ng-app>
+
+	<input type="text" ng-model="name"/></br>
+	    My name is: {{name}}</br>
+	    How old are you: <input type="text" ng-model="age"/></br>
+	    How long will you live: <input type="text" ng-model="length" /></br>
+	    You have {{length-age}} years to go</br>
+	  	What is your favorite food? <input type="text" ng-model="faveFood"/></br>
+	  	How many times per week do you eat it? <input type="text" ng-model="frequency"/></br>
+	  	And how much does it cost? <input type="text" ng-model="cost"/></br>
+	  	You will spend ${{cost*frequency}} on {{faveFood}} per week.</br>
+		You have {{(length-age)*52}} weeks to live.</br>
+		That's ${{(cost*frequency)*(length-age)*52}} that you will spend on pizza in your remaining life.
 
 
-			</div>
 
-		</body>
+
+
+  </body>
+</html>
+
+
+
+
+
+
+
 </html>
