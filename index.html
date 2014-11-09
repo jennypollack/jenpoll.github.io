@@ -16,6 +16,12 @@
 		margin-left: 50px;
 	}
 
+	.test{
+		width:100px;
+		height:100px;
+		background-color:red;
+	}
+
 </style>
 
 <html lang="en">
@@ -130,12 +136,21 @@
 	<div class ="calculadder-container">
 	  <script>
 
-	  var input;
+
 	function calculate() {
 
-		input = document.getElementById('userInput').value;
+		var input = document.getElementById('userInput');
+		var val = document.getElementById('userInput').value;
 
-		console.log(input);
+		console.log(val);
+
+		$('#theTable').each(function(){
+		    $(this).find('td').each(function(){
+		        console.log("hi");
+				//do your stuff, you can use $(this) to get current cell
+		    })
+		})
+
 
 	}
 		var maxID = 0;
@@ -151,13 +166,9 @@
 			var rows = t.getElementsByTagName("tr");
 			var r = rows[rows.length - 1];
 			r.parentNode.insertBefore(getTemplateRow(), r);
-
 			calculate();
+
 		}
-
-
-
-
 
 	  </script>
 
@@ -174,6 +185,15 @@
 	  </table>
 
 	  <button onclick="addRow();">Add</button>
+
+
+
+	</div>
+
+	<div class = "test">
+
+
+
 
 	</div>
   </body>
