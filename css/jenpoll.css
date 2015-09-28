@@ -5,6 +5,10 @@
   list-style-type:none;
 }
 
+/*.spotify-widget{
+  width:500px;
+  height:500px;
+}*/
 body {
   padding:50px;
   font:14px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
