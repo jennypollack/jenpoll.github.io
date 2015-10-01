@@ -16,6 +16,16 @@ body {
   font-weight:300;
 }
 
+.food-pic{
+  height: 300px;
+  width: 300px;
+}
+
+.rating{
+  display: inline-block;
+  font-weight: bold;
+}
+
 h1, h2, h3, h4, h5, h6 {
   color:#222;
   margin:0 0 20px;
